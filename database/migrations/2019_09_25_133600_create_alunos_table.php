@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateAlunosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('alunos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('id_pessoa');
+            $table->foreign('id_pessoa')->references('id')->on('pessoas');
+            $table->integer('id_turma');
+            $table->date('nascimento');
+            $table->char('sexo', 1);
+            $table->string('filiacao', 200);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('alunos');
+    }
+}
