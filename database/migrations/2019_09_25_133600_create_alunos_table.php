@@ -20,7 +20,7 @@ class CreateAlunosTable extends Migration
             $table->integer('id_turma');
             $table->date('nascimento');
             $table->char('sexo', 1);
-            $table->string('filiacao', 200);
+            $table->string('filiacao', 200)->nullable();
             $table->timestamps();
         });
     }

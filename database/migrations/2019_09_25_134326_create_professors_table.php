@@ -17,7 +17,7 @@ class CreateProfessorsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('id_pessoa');
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
-            $table->string('formacao');
+            $table->string('formacao')->nullable();
             $table->timestamps();
         });
     }
