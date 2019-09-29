@@ -15,11 +15,13 @@ class CreateTurmasTable extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('escola');
+            $table->string('nome');
+            $table->integer('id_escola');
+            $table->foreign('id_escola')->references('id')->on('escolas');
             $table->string('modalidade');
-            $table->string('professor');
-            $table->string('descricao');
-            $table->string('disciplina');
+            $table->integer('id_professor');
+            $table->text('descricao');
+            $table->integer('id_disciplina');
             $table->timestamps();
         });
     }

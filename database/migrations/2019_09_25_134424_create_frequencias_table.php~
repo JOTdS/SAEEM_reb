@@ -16,7 +16,10 @@ class CreateFrequenciasTable extends Migration
         Schema::create('frequencias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_disciplina');
-            
+            $table->integer('id_aluno');
+            $table->date('data');
+            $table->string('status');         
+            $table->text('descricao');
             $table->timestamps();
         });
     }

@@ -17,10 +17,13 @@ class CreateTurmasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->integer('id_escola');
+            $table->foreign('id_escola')->references('id')->on('escolas');
             $table->string('modalidade');
             $table->integer('id_professor');
+            $table->foreign('id_professor')->references('id')->on('professors');
             $table->text('descricao');
             $table->integer('id_disciplina');
+            $table->foreign('id_disciplina')->references('id')->on('disciplina');
             $table->timestamps();
         });
     }
