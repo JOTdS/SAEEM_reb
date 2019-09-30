@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
 class DisciplinaSeeder extends Seeder
 {
@@ -13,12 +12,12 @@ class DisciplinaSeeder extends Seeder
     public function run()
     {
 
-      $faker = Faker::create();
-      foreach (range(1,15) as $index) {
-
+      $faker = Faker\Factory::create();
+      for($g = 1; $g <= 99; $g++){
+        $nome =$faker->name;
         \App\Disciplina::create([
-            'nome' => $faker->text(80),
-            'descricao' => $faker->text(200),
+          'nome' => $nome,
+          'descricao' => $faker->text(190),
           ]);
       }
     }

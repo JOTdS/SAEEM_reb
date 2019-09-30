@@ -1,9 +1,6 @@
 <?php
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 
 class AvaliacaoSeeder extends Seeder
 {
@@ -14,12 +11,12 @@ class AvaliacaoSeeder extends Seeder
      */
     public function run()
     {
-      $faker = Faker::create();
-    	foreach (range(1,15) as $index) {
+      $faker = Faker\Factory::create();
+      for($g = 1; $g <= 99; $g++){
 	        App\Avaliacao::create([
               'data' => $faker->date,
               'nota' => $faker->randomFloat(2, 0, 10),
-              'descricao' => $faker->text(240),
+              'descricao' => $faker->text(190),
 	        ]);
       }
 	}
