@@ -12,19 +12,22 @@ class TurmaSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        for($g = 1; $g <= 99; $g++){
+
+        $professores = \App\Professor::All();
+        $quant_prof = count($professores);
+
+        $escolas = \App\Escola::All();
+
+        for($g = 1; $g <= 50; $g++){
             $nome =$faker->name;
             $modal = ['Creche Infantil Parcial','Creche Infantil Integral',
                       'Infantil', 'Ensino Fundamental', 'EJA', 'Quilombola'];
 
-            $professores = \App\Professor::All();
-            $quant_prof = count($professores);
-
             \App\Turma::create(['nome' => $nome,
                 'modalidade' => $modal[$faker->numberBetween(0,5)],
-                'descricao' => $faker->text(200),
-                'id_escola' => $faker->numberBetween(1,100),
-                'id_professor' => $professores[$faker->numberBetween(0,$quant_prof)]->id]);
+                'descricao' => $faker->text(150),
+                'id_escola' => $escolas[$faker->numberBetween(0, 48)]->id,
+                'id_professor' => $professores[$faker->numberBetween(0,79)]->id]);
 
             // $esc = DB::select('select * from escolas where nome = ?', [$nome]);
 

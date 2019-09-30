@@ -19,12 +19,8 @@ class CreateAvaliacaosTable extends Migration
             $table->date('data');
             $table->float('nota');
             $table->string('descricao', 240);
-
-            // chaves estrangeiras
-            // $table->Integer('id_disciplina');
-            // $table->foreign('id_disciplina')->references('id')->on('disciplinas');
-            // $table->Integer('id_aluno');
-            // $table->foreign('id_aluno')->references('id')->on('alunos');
+            $table->Integer('id_disciplina');
+            $table->Integer('id_aluno');
         });
     }
 

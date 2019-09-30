@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGestorsTable extends Migration
+class AddForeignKeyEscolaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateGestorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gestors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_pessoa');
-            $table->string('formacao')->nullable();
-            $table->timestamps();
+        Schema::table('escolas', function (Blueprint $table) {
+            $table->foreign('id_gestor')->references('id')->on('gestors');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateGestorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gestors');
+        Schema::table('escolas', function (Blueprint $table) {
+            //
+        });
     }
 }
