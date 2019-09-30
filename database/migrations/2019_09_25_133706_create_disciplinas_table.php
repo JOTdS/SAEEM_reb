@@ -16,6 +16,15 @@ class CreateDisciplinasTable extends Migration
         Schema::create('disciplinas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('nome');
+            $table->string('descricao', 240);
+
+            // chaves estrangeiras
+            $table->Integer('id_turma');
+            $table->foreign('id_turma')->references('id')->on('turmas');
+            $table->Integer('id_aluno');
+            $table->foreign('id_aluno')->references('id')->on('alunos');
+
         });
     }
 

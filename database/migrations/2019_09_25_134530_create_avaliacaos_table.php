@@ -21,9 +21,9 @@ class CreateAvaliacaosTable extends Migration
             $table->string('descricao', 240);
 
             // chaves estrangeiras
-            $table->unsignedBigInteger('id_disciplina');
+            $table->Integer('id_disciplina');
             $table->foreign('id_disciplina')->references('id')->on('disciplinas');
-            $table->unsignedBigInteger('id_aluno');
+            $table->Integer('id_aluno');
             $table->foreign('id_aluno')->references('id')->on('alunos');
         });
     }
