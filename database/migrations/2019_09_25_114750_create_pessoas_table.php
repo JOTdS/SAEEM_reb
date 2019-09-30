@@ -20,6 +20,7 @@ class CreatePessoasTable extends Migration
             $table->string('telefone')->nullable();
             $table->text('endereco')->nullable();
             $table->text('descricao')->nullable();
+            $table->char('sexo', 1);
             $table->string('password');
             $table->boolean('is_administrador')->default(false);
             $table->boolean('is_professor')->default(false);

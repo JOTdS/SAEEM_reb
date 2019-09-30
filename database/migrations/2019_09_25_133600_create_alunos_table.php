@@ -17,10 +17,9 @@ class CreateAlunosTable extends Migration
             $table->bigIncrements('id');
             $table->integer('id_pessoa');
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
-            $table->integer('id_turma');
+            $table->integer('id_turma')->nullable();
             $table->date('nascimento');
-            $table->char('sexo', 1);
-            $table->string('filiacao', 200);
+            $table->string('filiacao', 200)->nullable();
             $table->timestamps();
         });
     }

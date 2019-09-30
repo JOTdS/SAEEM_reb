@@ -17,9 +17,9 @@ class CreateFuncionariosTable extends Migration
             $table->bigIncrements('id');
             $table->integer('id_pessoa');
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
-            $table->integer('id_escola');
+            $table->integer('id_escola')->nullable();
             $table->foreign('id_escola')->references('id')->on('escolas');
-            $table->string('cargo');
+            $table->string('cargo')->nullable();
             $table->timestamps();
         });
     }
