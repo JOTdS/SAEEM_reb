@@ -14,13 +14,13 @@ class AvaliacaoSeeder extends Seeder
      */
     public function run()
     {
-      // $faker = Faker::create();
-    	// foreach (range(1,4) as $index) {
-	    //     DB::table('avaliacaos')->insert([
-      //         'data' => $faker->date,
-      //         'nota' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 10),
-      //         'descricao' => $faker->text($maxNbChars = 240),
-	    //     ]);
-      // }
+      $faker = Faker::create();
+    	foreach (range(1,15) as $index) {
+	        App\Avaliacao::create([
+              'data' => $faker->date,
+              'nota' => $faker->randomFloat(2, 0, 10),
+              'descricao' => $faker->text(240),
+	        ]);
+      }
 	}
 }
