@@ -14,15 +14,17 @@ class CreateEscolasTable extends Migration
     public function up()
     {
         Schema::create('escolas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('nome');
-            $table->text('descricao');
-            $table->text('endereco');
-            $table->integer('id_gestor');
-            $table->text('telefone');
-            $table->text('modalidade');
-            $table->integer('inep');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->text('nome');
+          $table->text('descricao');
+          $table->text('endereco');
+          $table->integer('id_gestor');
+          $table->text('telefone');
+          $table->text('modalidade');
+          $table->integer('inep');
+          $table->integer('id_professor');
+          $table->integer('id_funcionario');
+          $table->timestamps();
         });
     }
 
