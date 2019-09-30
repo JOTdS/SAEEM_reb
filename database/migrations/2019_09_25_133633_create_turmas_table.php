@@ -17,10 +17,8 @@ class CreateTurmasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome')->unique();
             $table->integer('id_escola');
-            // $table->foreign('id_escola')->references('id')->on('escolas');
             $table->string('modalidade')->nullable();
-            $table->integer('id_professor');
-            // $table->foreign('id_professor')->references('id')->on('professors');
+            $table->integer('id_professor')->nullable();
             $table->text('descricao')->nullable();
             $table->timestamps();
         });

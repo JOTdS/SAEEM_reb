@@ -16,9 +16,7 @@ class CreateGradeHorariosTable extends Migration
         Schema::create('grade__horarios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-
-            // $table->unsignedBigInteger('id_disciplina');
-            // $table->foreign('id_disciplina')->references('id')->on('disciplinas');
+            $table->unsignedBigInteger('id_disciplina');
 
         });
     }

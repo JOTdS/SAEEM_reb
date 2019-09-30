@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGestorsTable extends Migration
+class AddForeignKeyTurmaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGestorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gestors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_pessoa');
-            $table->string('formacao')->nullable();
-            $table->timestamps();
+        Schema::table('turmas', function (Blueprint $table) {
+            $table->foreign('id_escola')->references('id')->on('escolas');
+            $table->foreign('id_professor')->references('id')->on('professors');
+
         });
     }
 
@@ -28,6 +27,8 @@ class CreateGestorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gestors');
+        Schema::table('turmas', function (Blueprint $table) {
+            //
+        });
     }
 }
