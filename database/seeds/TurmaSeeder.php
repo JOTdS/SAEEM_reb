@@ -20,12 +20,12 @@ class TurmaSeeder extends Seeder
                 'modalidade' => $modal[$faker->numberBetween(0,1)],
                 'descricao' => $faker->text(200)]);
 
-            $esc = DB::select('select * from escolas where nome = ?', [$nome]);
+            // $esc = DB::select('select * from escolas where nome = ?', [$nome]);
 
-            \App\Turma::create(['id_escola' => $esc[0]->id,
-                'id_professor' => null, 
-                'id_disciplina' => null]);
-            
+            // \App\Turma::create(['id_escola' => $esc[0]->id,
+            //     'id_professor' => null,
+            //     'id_disciplina' => null]);
+
             //$table->integer('id_escola');
             //$table->foreign('id_escola')->references('id')->on('escolas');
             //$table->integer('id_professor');

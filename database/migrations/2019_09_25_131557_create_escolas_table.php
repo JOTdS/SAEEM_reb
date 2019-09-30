@@ -15,12 +15,13 @@ class CreateEscolasTable extends Migration
     {
         Schema::create('escolas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->text('nome');
+            $table->text('descricao');
             $table->text('endereco');
-            $table->integer('id_gestor');
-            $table->string('telefone');
-            $table->string('modalidade');
-            $table->string('inep');
+            //$table->integer('id_gestor');
+            $table->text('telefone');
+            $table->text('modalidade');
+            $table->integer('inep');
             $table->timestamps();
         });
     }
