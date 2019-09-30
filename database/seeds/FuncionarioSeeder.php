@@ -15,13 +15,14 @@ class FuncionarioSeeder extends Seeder
         for($g = 1; $g <= 208; $g++){
             $nome =$faker->name;
 
+            $sexo = ['M', 'F'];
             \App\Pessoa::create(['nome' => $nome,
                 'cpf' => $faker->numberBetween(10000000000, 99999999999),
                 'telefone' => $faker->phoneNumber,
                 'endereco' => $faker->address,
                 'descricao' => $faker->text(200),
                 'password' => $faker->text(32),
-                'is_administrador' => true]);
+                'sexo' => $sexo[$faker->numberBetween(0,1)]]);
 
             $pes = DB::select('select * from pessoas where nome = ?', [$nome]);
             $cargo = ['Zelador', 'Cozinheiro', 'Coordenador', 'Serviços Gerais',
