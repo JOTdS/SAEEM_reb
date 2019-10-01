@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EscolaSeeder extends Seeder
+class GradeHorarioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class EscolaSeeder extends Seeder
      */
     public function run()
     {
-      factory('App\Escola', 200)->create();
+        factory('App\Grade_Horario', 200)->create();
     }
 }
