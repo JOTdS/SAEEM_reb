@@ -12,6 +12,7 @@ $factory->define(\App\Funcionario::class, function (Faker $faker) {
 
     return [
         'id_pessoa' => function(){return factory(\App\Pessoa::class)->create()->id;},
+        //'id_escola' => function(){return factory(\App\Escola::class)->create()->id;},
         'id_escola' => null,
         'cargo' => $cargo[$faker->numberBetween(0,7)]
     ];

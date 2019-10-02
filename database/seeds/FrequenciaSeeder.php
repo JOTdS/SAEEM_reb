@@ -2,14 +2,15 @@
 
 use Illuminate\Database\Seeder;
 
-class AlunoSeeder extends Seeder
+class FrequenciaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run(){
-        factory('App\Aluno', 200)->create();
+    public function run()
+    {
+        factory('App\Frequencia', 120)->create();
     }
 }
