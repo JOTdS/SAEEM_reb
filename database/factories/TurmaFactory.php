@@ -6,7 +6,7 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(\App\Turma::class, function (Faker $faker) {
-  $nome = $faker->name;
+  $nome = $faker->unique()->name;
   $modal = ['Creche Infantil Parcial','Creche Infantil Integral',
             'Infantil', 'Ensino Fundamental', 'EJA', 'Quilombola'];
     return [
